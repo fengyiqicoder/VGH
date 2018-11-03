@@ -22,6 +22,7 @@
 		135DF499218BE44B00018ECB /* NodesBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF498218BE44B00018ECB /* NodesBarView.swift */; };
 		135DF49B218D61C500018ECB /* ToplicsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF49A218D61C500018ECB /* ToplicsTableView.swift */; };
 		135DF49D218D623000018ECB /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF49C218D623000018ECB /* TopicCell.swift */; };
+		138434A0218D78C200AAD789 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384349F218D78C200AAD789 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		135DF498218BE44B00018ECB /* NodesBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodesBarView.swift; sourceTree = "<group>"; };
 		135DF49A218D61C500018ECB /* ToplicsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToplicsTableView.swift; sourceTree = "<group>"; };
 		135DF49C218D623000018ECB /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		1384349F218D78C200AAD789 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		135DF497218BE42500018ECB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1384349F218D78C200AAD789 /* PaddingLabel.swift */,
 				135DF498218BE44B00018ECB /* NodesBarView.swift */,
 				135DF49A218D61C500018ECB /* ToplicsTableView.swift */,
 				135DF49C218D623000018ECB /* TopicCell.swift */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138434A0218D78C200AAD789 /* PaddingLabel.swift in Sources */,
 				135DF492218B40CC00018ECB /* V2exModel.swift in Sources */,
 				135DF49D218D623000018ECB /* TopicCell.swift in Sources */,
 				130FD42A218A96C900A06CF0 /* NavigationViewController.swift in Sources */,

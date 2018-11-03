@@ -68,6 +68,7 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell") as! TopicCell
         //装入数据
+        cell.setCellWith()
         return cell
     }
     

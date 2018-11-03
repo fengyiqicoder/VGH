@@ -38,17 +38,35 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TopicTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-yn-dmN">
-                                                            <rect key="frame" x="14" y="8" width="312" height="19.5"/>
+                                                            <rect key="frame" x="14" y="8" width="298" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.30196078431372547" green="0.32156862745098036" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="259" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-l8-Wgh">
-                                                            <rect key="frame" x="336.5" y="21.5" width="16.5" height="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="259" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-l8-Wgh" customClass="PaddingLabel" customModule="VGH" customModuleProvider="target">
+                                                            <rect key="frame" x="322.5" y="20.5" width="30.5" height="19"/>
                                                             <color key="backgroundColor" red="0.66666666666666663" green="0.69019607843137254" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                                    <real key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="9"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="「创建者」" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Muj-8j-kOH">
                                                             <rect key="frame" x="12" y="36.5" width="61.5" height="15"/>
@@ -79,7 +97,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="createrName" destination="ikb-ZA-G61" id="oQO-gP-LwG"/>
-                                                    <outlet property="repliesNumbers" destination="UGY-l8-Wgh" id="il0-C8-DF6"/>
+                                                    <outlet property="repliesNumbers" destination="UGY-l8-Wgh" id="UnD-3b-8MH"/>
                                                     <outlet property="topicTitle" destination="3CT-yn-dmN" id="9Fw-Wn-IkF"/>
                                                 </connections>
                                             </tableViewCell>
