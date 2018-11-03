@@ -1,0 +1,32 @@
+//
+//  TopicCell.swift
+//  VGH
+//
+//  Created by 冯奕琦 on 2018/11/3.
+//  Copyright © 2018年 冯奕琦. All rights reserved.
+//
+
+import UIKit
+
+class TopicCell: UITableViewCell {
+    
+    @IBOutlet weak var topicTitle: UILabel!
+    @IBOutlet weak var repliesNumbers: UILabel!
+    @IBOutlet weak var createrName: UILabel!
+    
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+        //修正replies框的外表
+        repliesNumbers.layer.cornerRadius = 3
+        repliesNumbers.
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}
