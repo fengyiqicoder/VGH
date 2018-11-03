@@ -41,34 +41,49 @@ class V2exViewController: UIViewController {
         mainView.layer.shadowColor = UIColor.black.cgColor
     }
     
-    
-
+    //TableView dataSource Value
+    var dataSource:[ClassifyTopicsData] = []
+    func updateTableViewWith(data:NodesTopicsData){
+        self.dataSource = data.topics
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
 extension V2exViewController:ChangeNetworkUserInterfaceProtocol{
-    func changeInterfaceBaseOn(data: V2exModel) {
+    func changeInterfaceBaseOn(data: NodesTopicsData) {
         //刷新方法
-        print(data.savedNodes)
+        updateTableViewWith(data: data)
     }
 }
 
 extension V2exViewController:NodesBarProtocol{
     func updateTableView(newNodeName: String) {
-        print(newNodeName)
+       //向Model请求数据
+        let oldData = model.getDataFor(nodes: true, name: newNodeName, update: false) as! NodesTopicsData?
+        if let actualData = oldData {
+            updateTableViewWith(data: actualData)
+        }else{
+            print("请求网络去了")
+        }
     }
 }
 
 extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //行数
-        return 10
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TopicCell") as! TopicCell
         //装入数据
-        cell.setCellWith()
+        let topicData = dataSource[indexPath.row]
+        cell.setCellWith(data: topicData)
         return cell
     }
     

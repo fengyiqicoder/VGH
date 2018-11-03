@@ -57,8 +57,9 @@ class V2exModel {//V2ex的模型
                         }
                         //储存到字典中
                         self.savedNodes[name] = newNodeData
+//                        print(newNodeData)
                         //更新界面 使用代理
-                        self.updateViewProtocol.changeInterfaceBaseOn(data: self)
+                        self.updateViewProtocol.changeInterfaceBaseOn(data: newNodeData)
                     }else{
                         print("类型不正确")
                         return
@@ -75,5 +76,5 @@ class V2exModel {//V2ex的模型
 }
 
 protocol ChangeNetworkUserInterfaceProtocol {
-    func changeInterfaceBaseOn(data:V2exModel)
+    func changeInterfaceBaseOn(data:NodesTopicsData)
 }

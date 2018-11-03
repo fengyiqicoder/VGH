@@ -26,8 +26,10 @@ class TopicCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellWith() {
-
+    func setCellWith(data:ClassifyTopicsData) {
+        topicTitle.text = data.title
+        repliesNumbers.text = String(data.replyAmount)
+        createrName.text = data.createUserName
     }
 
 }
