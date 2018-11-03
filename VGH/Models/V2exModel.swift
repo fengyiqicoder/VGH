@@ -60,6 +60,7 @@ class V2exModel {//V2ex的模型
 //                        print(newNodeData)
                         //更新界面 使用代理
                         self.updateViewProtocol.changeInterfaceBaseOn(data: newNodeData)
+//                        print("新数据到达！")
                     }else{
                         print("类型不正确")
                         return

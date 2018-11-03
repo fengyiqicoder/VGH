@@ -44,7 +44,8 @@ class NodesBarView: UIScrollView {
             let x = index == 0 ? buttonGap : buttonArray[index-1].frame.maxX+buttonGap
             let newButton = UIButton(frame: CGRect(x: x, y: 7, width: nodes.width, height: buttonHeight))
             newButton.setTitle(nodes.name, for: .normal)
-            newButton.setTitle(nodes.name, for: .highlighted)
+            //disable存放apiName
+            newButton.setTitle(nodes.apiName ?? nodes.name, for: .disabled)
             newButton.setTitleColor(#colorLiteral(red: 0.3333333333, green: 0.3333333333, blue: 0.3333333333, alpha: 1), for: .normal)
             newButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             newButton.layer.cornerRadius = 3
@@ -65,9 +66,13 @@ class NodesBarView: UIScrollView {
         currentNodeName = buttonArray.first!.title(for: .normal)
     }
     
+    func getCurrentNodeName() -> String {
+        return currentNodeName
+    }
+    
     @objc func touchANode(sender:UIButton) {
         //更新View的展示 当前View
-        if let actualTitle = sender.title(for: .normal){
+        if let actualTitle = sender.title(for: .disabled){
             if currentNodeName != actualTitle {
                 currentNodeName = actualTitle
                 //更新view

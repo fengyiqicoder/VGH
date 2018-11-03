@@ -26,7 +26,7 @@
                                             <constraint firstAttribute="height" constant="45" id="2Cd-0U-LDd"/>
                                         </constraints>
                                     </scrollView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nB3-3V-UxW" customClass="ToplicsTableView" customModule="VGH" customModuleProvider="target">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nB3-3V-UxW" customClass="ToplicsTableView" customModule="VGH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="45" width="363" height="559"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
@@ -43,7 +43,7 @@
                                                             <color key="textColor" red="0.30196078431372547" green="0.32156862745098036" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-l8-Wgh" customClass="PaddingLabel" customModule="VGH" customModuleProvider="target">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-l8-Wgh" customClass="PaddingLabel" customModule="VGH" customModuleProvider="target">
                                                             <rect key="frame" x="322.5" y="20.5" width="30.5" height="19"/>
                                                             <color key="backgroundColor" red="0.66666666666666663" green="0.69019607843137254" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -95,6 +95,7 @@
                                                         <constraint firstItem="UGY-l8-Wgh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ikb-ZA-G61" secondAttribute="trailing" constant="212.5" id="voy-7g-OQe"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <outlet property="createrName" destination="ikb-ZA-G61" id="oQO-gP-LwG"/>
                                                     <outlet property="repliesNumbers" destination="UGY-l8-Wgh" id="UnD-3b-8MH"/>

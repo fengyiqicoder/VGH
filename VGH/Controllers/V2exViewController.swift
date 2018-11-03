@@ -20,6 +20,15 @@ class V2exViewController: UIViewController {
     @IBOutlet weak var nodeBar: NodesBarView!
     @IBOutlet weak var tableView: ToplicsTableView!
     
+    //MARK:下拉刷新
+    let refreshControl = UIRefreshControl()
+    var currentNodeName:String{
+        return nodeBar.getCurrentNodeName()
+    }
+    
+    @objc func networkingRefresh() {
+        let _ = model.getDataFor(nodes: true, name: currentNodeName, update: true)//确认更新数据
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +37,10 @@ class V2exViewController: UIViewController {
         //TableViewDelegate
         tableView.delegate = self
         tableView.dataSource = self
+        //下拉刷新
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing Data")
+        refreshControl.addTarget(self, action: #selector(networkingRefresh), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,17 +56,18 @@ class V2exViewController: UIViewController {
     
     //TableView dataSource Value
     var dataSource:[ClassifyTopicsData] = []
-    func updateTableViewWith(data:NodesTopicsData){
+    func updateTableViewWith(data:NodesTopicsData){//使用这个方法输入数据
         self.dataSource = data.topics
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
 }
 
 extension V2exViewController:ChangeNetworkUserInterfaceProtocol{
     func changeInterfaceBaseOn(data: NodesTopicsData) {
-        //刷新方法
+        //网络刷新方法
         updateTableViewWith(data: data)
     }
 }
@@ -65,7 +79,7 @@ extension V2exViewController:NodesBarProtocol{
         if let actualData = oldData {
             updateTableViewWith(data: actualData)
         }else{
-            print("请求网络去了")
+//            print("请求网络")
         }
     }
 }
