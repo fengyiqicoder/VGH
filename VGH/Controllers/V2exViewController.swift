@@ -27,7 +27,7 @@ class V2exViewController: UIViewController {
     }
     
     @objc func networkingRefresh() {
-        let _ = model.getDataFor(nodes: true, name: currentNodeName, update: true)//确认更新数据
+        let _ = model.getDataFor(nodes: true, nodeName: currentNodeName, update: true, id: nil)//确认更新数据
     }
     
     override func viewDidLoad() {
@@ -59,8 +59,8 @@ class V2exViewController: UIViewController {
     func updateTableViewWith(data:NodesTopicsData){//使用这个方法输入数据
         self.dataSource = data.topics
         DispatchQueue.main.async {
-            self.tableView.reloadData()
             self.refreshControl.endRefreshing()
+            self.tableView.reloadData()
         }
     }
 }
@@ -75,7 +75,7 @@ extension V2exViewController:ChangeNetworkUserInterfaceProtocol{
 extension V2exViewController:NodesBarProtocol{
     func updateTableView(newNodeName: String) {
        //向Model请求数据
-        let oldData = model.getDataFor(nodes: true, name: newNodeName, update: false) as! NodesTopicsData?
+        let oldData = model.getDataFor(nodes: true, nodeName: newNodeName, update: false, id: nil) as! NodesTopicsData?
         if let actualData = oldData {
             updateTableViewWith(data: actualData)
         }else{
@@ -111,6 +111,10 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //选择这个Row
+        let cell = tableView.cellForRow(at: indexPath) as! TopicCell
+        let topicId = cell.getIdOfThisTopic()
+        //新建VC
+        let _ = model.getDataFor(nodes: false, nodeName: currentNodeName, update: false, id: topicId)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

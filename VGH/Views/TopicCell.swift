@@ -14,6 +14,8 @@ class TopicCell: UITableViewCell {
     @IBOutlet weak var repliesNumbers: PaddingLabel!
     @IBOutlet weak var createrName: UILabel!
     
+    var topicData:ClassifyTopicsData!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +29,14 @@ class TopicCell: UITableViewCell {
     }
     
     func setCellWith(data:ClassifyTopicsData) {
-        topicTitle.text = data.title
-        repliesNumbers.text = String(data.replyAmount)
-        createrName.text = data.createUserName
+        topicData = data
+        topicTitle.text = topicData.title
+        repliesNumbers.text = String(topicData.replyAmount)
+        createrName.text = topicData.createUserName
+    }
+    
+    func getIdOfThisTopic() -> String {
+        return String(topicData.id)
     }
 
 }

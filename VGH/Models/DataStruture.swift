@@ -13,6 +13,7 @@ struct ClassifyTopicsData {
     var id:Int
     var title:String
     var createUserName:String
+    var content:String
     var replyAmount:Int
 }
 
@@ -28,7 +29,9 @@ struct ReplysData {
 }
 
 struct TopicsDetailData {
-    var id:Int
+    var id:String
+    var title:String
+    var content:String
     var replys:[ReplysData] = []
 }
 
