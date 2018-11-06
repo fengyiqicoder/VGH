@@ -9,7 +9,10 @@
 import UIKit
 
 class V2exViewController: UIViewController {
-
+    
+    
+    //MARK: Vars
+    
     lazy var model = { () -> V2exModel in
         let newModel = V2exModel()
         newModel.updateViewProtocol = self
@@ -30,6 +33,7 @@ class V2exViewController: UIViewController {
         let _ = model.getDataFor(nodes: true, nodeName: currentNodeName, update: true, id: nil)//确认更新数据
     }
     
+    //MARK:VC LIFECycle
     override func viewDidLoad() {
         super.viewDidLoad()
         nodeBar.delegateToUpdate = self
@@ -53,7 +57,7 @@ class V2exViewController: UIViewController {
         mainView.layer.shadowOpacity = 0.1
         mainView.layer.shadowColor = UIColor.black.cgColor
     }
-    
+    //MARK: C -> V 方法
     //TableView dataSource Value
     var dataSource:[ClassifyTopicsData] = []
     func updateTableViewWith(data:NodesTopicsData){//使用这个方法输入数据
@@ -63,15 +67,44 @@ class V2exViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    //Segue 有关方法
+    var topicDetailDataForSegue:TopicsDetailData?
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let id = segue.identifier ,id == "segueToTopicDetail"{
+            if let nextVC = segue.destination as? TopicDetailViewController{
+                
+                //添加数据
+                if let actualDataForSegue = topicDetailDataForSegue{
+                    nextVC.dataSource = actualDataForSegue
+                }
+            }
+        }
+    }
+    
+    func segueToDetail(data:TopicsDetailData) {
+        topicDetailDataForSegue = data
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "segueToTopicDetail", sender: nil)
+        }
+    }
+    
 }
-
+//MARK:ChangeNetworkUserInterfaceProtocol
 extension V2exViewController:ChangeNetworkUserInterfaceProtocol{
-    func changeInterfaceBaseOn(data: NodesTopicsData) {
+    func changeNodesInterfaceBaseOn(data: NodesTopicsData) {
         //网络刷新方法
         updateTableViewWith(data: data)
     }
+    
+    func segueToTopicDetailInterfaceBaseOn(data: TopicsDetailData) {
+        //网络刷新Topic
+        segueToDetail(data: data)
+    }
+    
+    
 }
-
+//MARK:NodesBarProtocol
 extension V2exViewController:NodesBarProtocol{
     func updateTableView(newNodeName: String) {
        //向Model请求数据
@@ -84,6 +117,7 @@ extension V2exViewController:NodesBarProtocol{
     }
 }
 
+//MARK:TableViewDelegate
 extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
     
     
@@ -114,7 +148,12 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.cellForRow(at: indexPath) as! TopicCell
         let topicId = cell.getIdOfThisTopic()
         //新建VC
-        let _ = model.getDataFor(nodes: false, nodeName: currentNodeName, update: false, id: topicId)
+        let oldTopicReplyData = model.getDataFor(nodes: false, nodeName: currentNodeName, update: false, id: topicId) as? TopicsDetailData
+        if let actualDetail = oldTopicReplyData {
+            //使用Segue链接读入下个界面
+            segueToDetail(data: actualDetail)
+        }
+        //装入数据到Segue到下一个界面
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

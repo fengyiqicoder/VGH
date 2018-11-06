@@ -34,6 +34,7 @@ class V2exModel {//V2ex的模型
     
     //获取Node数据 更新或者储存data到字典里
     func getNetworkNodeData(forNode:Bool,nodeName:String,id:String?){
+        print("请求网络")
         // 生成不同的Url
         let basicUrl = forNode == true ? Constants.nodeDataUrl : Constants.detailDataUrl
         let urlString = basicUrl + (forNode ? nodeName : id!)
@@ -64,7 +65,7 @@ class V2exModel {//V2ex的模型
                             //储存到字典中
                             self.savedNodes[nodeName] = newNodeData
                             //使用代理更新界面
-                            self.updateViewProtocol.changeInterfaceBaseOn(data: newNodeData)
+                            self.updateViewProtocol.changeNodesInterfaceBaseOn(data: newNodeData)
                             
                         }else{
                             
@@ -93,7 +94,7 @@ class V2exModel {//V2ex的模型
                             //储存到字典中
                             self.savedTopicsDetails[id] = newDetailData
                             //使用代理更新界面
-                            print(newDetailData)
+                            self.updateViewProtocol.segueToTopicDetailInterfaceBaseOn(data: newDetailData)
                             
                         }
                         
@@ -113,5 +114,6 @@ class V2exModel {//V2ex的模型
 }
 
 protocol ChangeNetworkUserInterfaceProtocol {
-    func changeInterfaceBaseOn(data:NodesTopicsData)
+    func changeNodesInterfaceBaseOn(data:NodesTopicsData)
+    func segueToTopicDetailInterfaceBaseOn(data:TopicsDetailData)
 }

@@ -131,11 +131,43 @@
                         <outlet property="mainView" destination="N4Z-bt-DaK" id="TdR-hx-9eh"/>
                         <outlet property="nodeBar" destination="psm-AI-LpQ" id="qDh-xF-SdJ"/>
                         <outlet property="tableView" destination="nB3-3V-UxW" id="CID-dC-eGW"/>
+                        <segue destination="4ZM-FA-EfG" kind="show" identifier="segueToTopicDetail" id="oaM-sT-13m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jek-Ey-UXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1127.2" y="-429.53523238380814"/>
+        </scene>
+        <!--Topic Detail View Controller-->
+        <scene sceneID="cH0-gu-jMD">
+            <objects>
+                <viewController id="4ZM-FA-EfG" customClass="TopicDetailViewController" customModule="VGH" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2cG-fA-5kz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-cl-TAu">
+                                <rect key="frame" x="16" y="20" width="343" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9fm-cl-TAu" firstAttribute="leading" secondItem="dOX-j7-GqU" secondAttribute="leading" constant="16" id="FKn-Ll-fFL"/>
+                            <constraint firstItem="9fm-cl-TAu" firstAttribute="top" secondItem="dOX-j7-GqU" secondAttribute="top" id="H4Z-g5-YeK"/>
+                            <constraint firstItem="dOX-j7-GqU" firstAttribute="trailing" secondItem="9fm-cl-TAu" secondAttribute="trailing" constant="16" id="hdB-uY-OFD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dOX-j7-GqU"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="9fm-cl-TAu" id="dDA-Se-avi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8en-U3-hf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1127.2" y="356.67166416791605"/>
         </scene>
         <!--Github-->
         <scene sceneID="3dU-e3-rx2">
