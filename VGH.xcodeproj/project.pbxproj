@@ -17,6 +17,7 @@
 		13209835218859F4006DED90 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209834218859F4006DED90 /* RootViewController.swift */; };
 		1344FFD72191328A00C99E0F /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */; };
 		1344FFD92191471800C99E0F /* RepliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */; };
+		1344FFDB2191703300C99E0F /* StaticTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFDA2191703300C99E0F /* StaticTopicCell.swift */; };
 		135DF48F218B407B00018ECB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF48E218B407B00018ECB /* NetworkManager.swift */; };
 		135DF492218B40CC00018ECB /* V2exModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF491218B40CC00018ECB /* V2exModel.swift */; };
 		135DF494218B413600018ECB /* DataStruture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF493218B413600018ECB /* DataStruture.swift */; };
@@ -52,6 +53,7 @@
 		13209834218859F4006DED90 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesTableViewCell.swift; sourceTree = "<group>"; };
+		1344FFDA2191703300C99E0F /* StaticTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTopicCell.swift; sourceTree = "<group>"; };
 		135DF48E218B407B00018ECB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		135DF491218B40CC00018ECB /* V2exModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exModel.swift; sourceTree = "<group>"; };
 		135DF493218B413600018ECB /* DataStruture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStruture.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				135DF49A218D61C500018ECB /* ToplicsTableView.swift */,
 				135DF49C218D623000018ECB /* TopicCell.swift */,
 				1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */,
+				1344FFDA2191703300C99E0F /* StaticTopicCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				138434A0218D78C200AAD789 /* PaddingLabel.swift in Sources */,
 				1344FFD72191328A00C99E0F /* TopicDetailViewController.swift in Sources */,
 				135DF492218B40CC00018ECB /* V2exModel.swift in Sources */,
+				1344FFDB2191703300C99E0F /* StaticTopicCell.swift in Sources */,
 				135DF49D218D623000018ECB /* TopicCell.swift in Sources */,
 				130FD42A218A96C900A06CF0 /* NavigationViewController.swift in Sources */,
 				13209835218859F4006DED90 /* RootViewController.swift in Sources */,

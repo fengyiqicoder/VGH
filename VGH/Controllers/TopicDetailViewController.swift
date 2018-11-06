@@ -10,10 +10,7 @@ import UIKit
 
 class TopicDetailViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var replysTableView: UITableView!
-    @IBOutlet weak var createrNameLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
     
     var dataSource:TopicsDetailData!
     
@@ -21,12 +18,14 @@ class TopicDetailViewController: UIViewController {
         super.viewDidLoad()
         //添加NavigationBar
         self.navigationController!.isNavigationBarHidden = false
-        titleLabel.text = dataSource.title
-        contentLabel.text = dataSource.content
-        createrNameLabel.text = dataSource.createrName
         //添加tableView delegate
         replysTableView.dataSource = self
         replysTableView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //添加NavigationBar
+        self.navigationController!.isNavigationBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,15 +39,25 @@ class TopicDetailViewController: UIViewController {
 extension TopicDetailViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "replyCell") as! RepliesTableViewCell
-        cell.set(data: dataSource.replys[indexPath.row])
-        return cell
+        let order = indexPath.row
+//        let cell:UITableViewCell!
+        if order == 0 {
+            //标题cell
+            let staticCell = tableView.dequeueReusableCell(withIdentifier: "staticCell") as! StaticTopicCell
+            staticCell.set(data: (title: dataSource.title, UserName: dataSource.createrName, content: dataSource.content))
+            return staticCell
+        }else{
+            //回复cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "replyCell") as! RepliesTableViewCell
+            cell.set(data: dataSource.replys[order-1])
+            return cell
+        }
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(dataSource.replys.count)
-        return dataSource.replys.count
+//        print(dataSource.replys.count)
+        return dataSource.replys.count+1
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

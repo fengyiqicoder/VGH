@@ -16,13 +16,19 @@ class RepliesTableViewCell: UITableViewCell {
     
     var replyData:ReplysData!
     
+    
     func set(data:ReplysData){
         self.replyData = data
         //把data装入View
         userName.text = replyData.userNameString
         content.text = replyData.content
         //通过网络获取UIImage
+        userImage.layer.masksToBounds = true
+        userImage.layer.cornerRadius = 3
         let imageUrl = replyData.userImageURL
+        NetWorkManager.getImageFrom(url: imageUrl) { (image) in
+            self.userImage.image = image
+        }
     }
     
     

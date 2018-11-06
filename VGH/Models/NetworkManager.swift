@@ -7,25 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
-class NetWorkManager {//网络管理类
-//    //获取Node数据
-//    static func getNodeData(name:String){
-//        let urlString = Constants.nodeDataUrl + name
-//        let url = URL(string: urlString)!
-//        URLSession.shared.dataTask(with: url){ (data,responds,error) in
-//
-//            if
-//
-//        }.resume()
-//
-//    }
-    
-    //获取Topic数据
-//    static func getDetailData(id:String)-> TopicsDetailData?{
-//
-//    }
-    
+class NetWorkManager {
     //获取数据图片
+    
+    static func getImageFrom(url:String,handler:@escaping (UIImage)->Void){
+        let url = URL(string: url)!
+        URLSession.shared.dataTask(with: url){ (data,reponds,error) in
+            if let actualData = data,error == nil{
+                let image = UIImage(data: actualData)!
+                DispatchQueue.main.async {
+                    handler(image)
+                }
+            }
+        }.resume()
+    }
     
 }

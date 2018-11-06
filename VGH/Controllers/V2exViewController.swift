@@ -57,6 +57,12 @@ class V2exViewController: UIViewController {
         mainView.layer.shadowOpacity = 0.1
         mainView.layer.shadowColor = UIColor.black.cgColor
     }
+//    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.navigationController!.isNavigationBarHidden = true
+//    }
+    
     //MARK: C -> V 方法
     //TableView dataSource Value
     var dataSource:[ClassifyTopicsData] = []
@@ -69,6 +75,12 @@ class V2exViewController: UIViewController {
     }
     
     //Segue 有关方法
+    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        super.unwind(for: unwindSegue, towards: subsequentVC)
+        print("Back to Main ViewControler")
+    }
+    
     var topicDetailDataForSegue:TopicsDetailData?
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let id = segue.identifier ,id == "segueToTopicDetail"{
