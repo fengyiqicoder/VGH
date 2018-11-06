@@ -32,6 +32,7 @@ struct TopicsDetailData {
     var id:String
     var title:String
     var content:String
+    var createrName:String
     var replys:[ReplysData] = []
 }
 

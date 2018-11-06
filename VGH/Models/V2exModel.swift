@@ -76,7 +76,7 @@ class V2exModel {//V2ex的模型
                             var newDetailData:TopicsDetailData!
                             for topic in topicData.topics{
                                 if id == String(topic.id){
-                                    newDetailData = TopicsDetailData(id:id,title:topic.title,content:topic.content,replys:[])
+                                    newDetailData = TopicsDetailData(id:id,title:topic.title,content:topic.content,createrName:topic.createUserName,replys:[])
                                     break
                                 }
                             }

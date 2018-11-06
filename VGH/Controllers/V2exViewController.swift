@@ -153,7 +153,6 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
             //使用Segue链接读入下个界面
             segueToDetail(data: actualDetail)
         }
-        //装入数据到Segue到下一个界面
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
