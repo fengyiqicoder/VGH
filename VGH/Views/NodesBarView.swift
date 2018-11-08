@@ -63,7 +63,7 @@ class NodesBarView: UIScrollView {
     func initFirstNode(){
         //设置初始化的node
         buttonArray.first!.changeToBlack()
-        currentNodeName = buttonArray.first!.title(for: .normal)
+        currentNodeName = buttonArray.first!.title(for: .disabled)
     }
     
     func getCurrentNodeName() -> String {

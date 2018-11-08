@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNI-7R-iUo">
-                                <rect key="frame" x="96" y="185.5" width="81.5" height="29.5"/>
+                                <rect key="frame" x="44" y="123.5" width="133.5" height="29.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="V2ex ">
                                         <attributes>
@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Op-uG-aNt">
-                                <rect key="frame" x="96" y="245" width="103.5" height="29.5"/>
+                                <rect key="frame" x="44" y="183" width="155.5" height="29.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Github">
                                         <attributes>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-b1-Wj2">
-                                <rect key="frame" x="96" y="305" width="195" height="29.5"/>
+                                <rect key="frame" x="44" y="243" width="247" height="29.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="HacherNews">
                                         <attributes>
@@ -71,9 +71,9 @@
                             <constraint firstItem="eNI-7R-iUo" firstAttribute="leading" secondItem="1Op-uG-aNt" secondAttribute="leading" id="EhU-g1-eMt"/>
                             <constraint firstItem="TMf-5V-fh1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="NAq-8H-sjZ"/>
                             <constraint firstItem="1Op-uG-aNt" firstAttribute="top" secondItem="eNI-7R-iUo" secondAttribute="bottom" constant="30" id="Sws-pe-323"/>
-                            <constraint firstItem="1Op-uG-aNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="X21-Y5-Qyj"/>
+                            <constraint firstItem="1Op-uG-aNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="X21-Y5-Qyj"/>
                             <constraint firstItem="eyD-b1-Wj2" firstAttribute="top" secondItem="1Op-uG-aNt" secondAttribute="bottom" constant="30.5" id="X96-vY-UeG"/>
-                            <constraint firstItem="1Op-uG-aNt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-84" id="evx-pF-yRt"/>
+                            <constraint firstItem="1Op-uG-aNt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-146" id="evx-pF-yRt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TMf-5V-fh1" secondAttribute="bottom" constant="40" id="fvD-MA-uRy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eNI-7R-iUo" secondAttribute="trailing" constant="197.5" id="gG2-il-alx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1Op-uG-aNt" secondAttribute="trailing" constant="175.5" id="lTg-V6-Ee5"/>
