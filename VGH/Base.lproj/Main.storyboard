@@ -38,13 +38,13 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="TopicTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CT-yn-dmN">
-                                                            <rect key="frame" x="14" y="8" width="298" height="19.5"/>
+                                                            <rect key="frame" x="14" y="8" width="312" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" red="0.30196078431372547" green="0.32156862745098036" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGY-l8-Wgh" customClass="PaddingLabel" customModule="VGH" customModuleProvider="target">
-                                                            <rect key="frame" x="322.5" y="20.5" width="30.5" height="19"/>
+                                                            <rect key="frame" x="336.5" y="21.5" width="16.5" height="17"/>
                                                             <color key="backgroundColor" red="0.66666666666666663" green="0.69019607843137254" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -269,23 +269,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8en-U3-hf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1215.2" y="346.77661169415296"/>
+            <point key="canvasLocation" x="-1127" y="346"/>
         </scene>
         <!--Github-->
         <scene sceneID="3dU-e3-rx2">
             <objects>
-                <viewController id="WJ9-BM-ZDS" sceneMemberID="viewController">
+                <viewController id="WJ9-BM-ZDS" customClass="GithubViewController" customModule="VGH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pW3-Zq-zwC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsp-m4-M1v">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dAM-qB-vGD" firstAttribute="trailing" secondItem="Fsp-m4-M1v" secondAttribute="trailing" id="0xO-kV-g2V"/>
+                            <constraint firstItem="Fsp-m4-M1v" firstAttribute="top" secondItem="dAM-qB-vGD" secondAttribute="top" id="NKG-sh-v7x"/>
+                            <constraint firstItem="Fsp-m4-M1v" firstAttribute="leading" secondItem="dAM-qB-vGD" secondAttribute="leading" id="UvF-oa-JgX"/>
+                            <constraint firstItem="dAM-qB-vGD" firstAttribute="bottom" secondItem="Fsp-m4-M1v" secondAttribute="bottom" id="qTf-tx-3I4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dAM-qB-vGD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Github" id="b3N-m5-w4d"/>
+                    <connections>
+                        <outlet property="webView" destination="Fsp-m4-M1v" id="zRt-l8-SKU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OY-Nk-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231" y="-430"/>
+            <point key="canvasLocation" x="-231.19999999999999" y="-430.43478260869568"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Thb-Le-lsH">

@@ -26,6 +26,7 @@
 		135DF49B218D61C500018ECB /* ToplicsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF49A218D61C500018ECB /* ToplicsTableView.swift */; };
 		135DF49D218D623000018ECB /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135DF49C218D623000018ECB /* TopicCell.swift */; };
 		138434A0218D78C200AAD789 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1384349F218D78C200AAD789 /* PaddingLabel.swift */; };
+		139F13782193FEFA001D37D8 /* GithubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F13772193FEFA001D37D8 /* GithubViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		135DF49A218D61C500018ECB /* ToplicsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToplicsTableView.swift; sourceTree = "<group>"; };
 		135DF49C218D623000018ECB /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		1384349F218D78C200AAD789 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		139F13772193FEFA001D37D8 /* GithubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				130FD42D218A97DF00A06CF0 /* V2exViewController.swift */,
 				130FD429218A96C900A06CF0 /* NavigationViewController.swift */,
 				1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */,
+				139F13772193FEFA001D37D8 /* GithubViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				135DF49D218D623000018ECB /* TopicCell.swift in Sources */,
 				130FD42A218A96C900A06CF0 /* NavigationViewController.swift in Sources */,
 				13209835218859F4006DED90 /* RootViewController.swift in Sources */,
+				139F13782193FEFA001D37D8 /* GithubViewController.swift in Sources */,
 				135DF494218B413600018ECB /* DataStruture.swift in Sources */,
 				135DF499218BE44B00018ECB /* NodesBarView.swift in Sources */,
 				135DF48F218B407B00018ECB /* NetworkManager.swift in Sources */,
