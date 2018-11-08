@@ -136,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jek-Ey-UXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1127.2" y="-429.53523238380814"/>
+            <point key="canvasLocation" x="-1311" y="-430"/>
         </scene>
         <!--Topic Detail View Controller-->
         <scene sceneID="cH0-gu-jMD">
@@ -269,9 +269,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8en-U3-hf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1127" y="346"/>
+            <point key="canvasLocation" x="-1311" y="465"/>
         </scene>
-        <!--Github-->
+        <!--Trending-->
         <scene sceneID="3dU-e3-rx2">
             <objects>
                 <viewController id="WJ9-BM-ZDS" customClass="GithubViewController" customModule="VGH" customModuleProvider="target" sceneMemberID="viewController">
@@ -280,31 +280,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsp-m4-M1v">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhf-9S-fzc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwB-dc-2Hj">
+                                        <rect key="frame" x="8" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="VPZ-FC-cTe"/>
+                                            <constraint firstAttribute="width" secondItem="dwB-dc-2Hj" secondAttribute="height" multiplier="1:1" id="WYw-Vk-gBr"/>
+                                        </constraints>
+                                        <state key="normal" image="backButton"/>
+                                        <connections>
+                                            <action selector="webViewGoback" destination="WJ9-BM-ZDS" eventType="touchUpInside" id="Apz-zj-nR4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfH-Ub-Elf">
+                                        <rect key="frame" x="148.5" y="3.5" width="78" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <state key="normal" title="Language">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeLanguage" destination="WJ9-BM-ZDS" eventType="touchUpInside" id="mFu-Xj-X4h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-Bt-bb1">
+                                        <rect key="frame" x="235.5" y="16.5" width="13" height="11"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xgf-Bt-bb1" secondAttribute="height" multiplier="13:11" id="iQK-Va-IGP"/>
+                                            <constraint firstAttribute="width" constant="13" id="k8K-z0-pcb"/>
+                                        </constraints>
+                                        <state key="normal" image="Triangle-button"/>
+                                        <connections>
+                                            <action selector="changeLanguage" destination="WJ9-BM-ZDS" eventType="touchUpInside" id="ego-sB-pWT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dwB-dc-2Hj" firstAttribute="leading" secondItem="Vhf-9S-fzc" secondAttribute="leading" constant="8" id="3z4-qb-AoS"/>
+                                    <constraint firstItem="PfH-Ub-Elf" firstAttribute="centerX" secondItem="Vhf-9S-fzc" secondAttribute="centerX" id="5IX-4b-uM5"/>
+                                    <constraint firstAttribute="height" constant="40" id="MZv-V1-EaK"/>
+                                    <constraint firstItem="dwB-dc-2Hj" firstAttribute="centerY" secondItem="Vhf-9S-fzc" secondAttribute="centerY" id="Npl-B7-N3Z"/>
+                                    <constraint firstItem="xgf-Bt-bb1" firstAttribute="centerY" secondItem="PfH-Ub-Elf" secondAttribute="centerY" constant="2" id="adv-a2-PfK"/>
+                                    <constraint firstItem="xgf-Bt-bb1" firstAttribute="leading" secondItem="PfH-Ub-Elf" secondAttribute="trailing" constant="9" id="hWX-Uo-0Z5"/>
+                                    <constraint firstItem="PfH-Ub-Elf" firstAttribute="centerY" secondItem="Vhf-9S-fzc" secondAttribute="centerY" id="i1c-uP-0oQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549018" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dAM-qB-vGD" firstAttribute="trailing" secondItem="Fsp-m4-M1v" secondAttribute="trailing" id="0xO-kV-g2V"/>
-                            <constraint firstItem="Fsp-m4-M1v" firstAttribute="top" secondItem="dAM-qB-vGD" secondAttribute="top" id="NKG-sh-v7x"/>
                             <constraint firstItem="Fsp-m4-M1v" firstAttribute="leading" secondItem="dAM-qB-vGD" secondAttribute="leading" id="UvF-oa-JgX"/>
+                            <constraint firstItem="dAM-qB-vGD" firstAttribute="trailing" secondItem="Vhf-9S-fzc" secondAttribute="trailing" id="ahA-mW-qtN"/>
+                            <constraint firstItem="Vhf-9S-fzc" firstAttribute="leading" secondItem="dAM-qB-vGD" secondAttribute="leading" id="bRS-5Z-ilI"/>
+                            <constraint firstItem="Fsp-m4-M1v" firstAttribute="top" secondItem="Vhf-9S-fzc" secondAttribute="bottom" id="kMM-EV-sPF"/>
                             <constraint firstItem="dAM-qB-vGD" firstAttribute="bottom" secondItem="Fsp-m4-M1v" secondAttribute="bottom" id="qTf-tx-3I4"/>
+                            <constraint firstItem="Vhf-9S-fzc" firstAttribute="top" secondItem="dAM-qB-vGD" secondAttribute="top" id="tRZ-pc-Uof"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dAM-qB-vGD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Github" id="b3N-m5-w4d"/>
+                    <tabBarItem key="tabBarItem" title="Trending" id="b3N-m5-w4d"/>
                     <connections>
+                        <outlet property="backButton" destination="dwB-dc-2Hj" id="k8o-Os-aLJ"/>
                         <outlet property="webView" destination="Fsp-m4-M1v" id="zRt-l8-SKU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OY-Nk-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231.19999999999999" y="-430.43478260869568"/>
+            <point key="canvasLocation" x="-231" y="-430"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="Thb-Le-lsH">
@@ -358,7 +409,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-xS-U5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578" y="-430"/>
+            <point key="canvasLocation" x="745" y="-430"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Triangle-button" width="52" height="44"/>
+        <image name="backButton" width="75" height="75"/>
+    </resources>
 </document>

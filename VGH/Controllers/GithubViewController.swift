@@ -11,6 +11,24 @@ import WebKit
 
 class GithubViewController: UIViewController {
 
+    //MARK:NavigationView
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    
+    @IBAction func webViewGoback() {
+       print("Go back")
+        webView.goBack()
+//        checkIfNeedToShowBackButton()
+    }
+    
+    @IBAction func changeLanguage() {
+        print("Change Language")
+    }
+    
+    
+    //MARK:WKWebView
+    
     @IBOutlet weak var webView: WKWebView!
     
 //    override func loadView() {
@@ -29,14 +47,14 @@ class GithubViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //配置Webview
         webView.navigationDelegate = self;
-        let myURL = URL(string: "https://github.com/trending/swift?since=daily")
+        let myURL = URL(string: "https://github.com/trending")
         let myRequest = URLRequest(url: myURL!)
+        webView.allowsBackForwardNavigationGestures = true
         webView.load(myRequest)
     }
     
-
-
 }
 
 
@@ -54,14 +72,16 @@ extension GithubViewController: WKNavigationDelegate {
     
     //阻止链接被点击
 //    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+//        
 //        if navigationAction.navigationType == .linkActivated {
-//            decisionHandler(.cancel)
-//
-//            let alertController = UIAlertController(title: "Action not allowed", message: "Tapping on links is not allowed. Sorry!", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            present(alertController, animated: true, completion: nil)
-//            return
-//
+////            decisionHandler(.cancel)
+////
+////            let alertController = UIAlertController(title: "Action not allowed", message: "Tapping on links is not allowed. Sorry!", preferredStyle: .alert)
+////            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+////            present(alertController, animated: true, completion: nil)
+////            return
+//            print("点击链接")
+//            backButton.isHidden = false
 //        }
 //
 //        decisionHandler(.allow)

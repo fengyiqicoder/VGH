@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		130FD42A218A96C900A06CF0 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FD429218A96C900A06CF0 /* NavigationViewController.swift */; };
 		130FD42E218A97DF00A06CF0 /* V2exViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130FD42D218A97DF00A06CF0 /* V2exViewController.swift */; };
+		131E79A22194327D008CD0CC /* LanguageNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E79A12194327D008CD0CC /* LanguageNavigationView.swift */; };
 		1320981521885091006DED90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320981421885091006DED90 /* AppDelegate.swift */; };
 		1320981A21885091006DED90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1320981821885091006DED90 /* Main.storyboard */; };
 		1320981C21885092006DED90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1320981B21885092006DED90 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		130FD429218A96C900A06CF0 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		130FD42D218A97DF00A06CF0 /* V2exViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2exViewController.swift; sourceTree = "<group>"; };
+		131E79A12194327D008CD0CC /* LanguageNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageNavigationView.swift; sourceTree = "<group>"; };
 		1320981121885091006DED90 /* VGH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1320981421885091006DED90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1320981921885091006DED90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				135DF49C218D623000018ECB /* TopicCell.swift */,
 				1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */,
 				1344FFDA2191703300C99E0F /* StaticTopicCell.swift */,
+				131E79A12194327D008CD0CC /* LanguageNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				135DF49D218D623000018ECB /* TopicCell.swift in Sources */,
 				130FD42A218A96C900A06CF0 /* NavigationViewController.swift in Sources */,
 				13209835218859F4006DED90 /* RootViewController.swift in Sources */,
+				131E79A22194327D008CD0CC /* LanguageNavigationView.swift in Sources */,
 				139F13782193FEFA001D37D8 /* GithubViewController.swift in Sources */,
 				135DF494218B413600018ECB /* DataStruture.swift in Sources */,
 				135DF499218BE44B00018ECB /* NodesBarView.swift in Sources */,
