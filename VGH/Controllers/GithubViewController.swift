@@ -11,10 +11,24 @@ import WebKit
 
 class GithubViewController: UIViewController {
 
+    //MARK: Update From Model
+    var model:GithubModel = GithubModel()
+    
+    func updateModelToWeb() {
+        //改变AllLanguages的url为空
+        let urlName = model.currentLangage == Constants.allLangages[0] ? "": model.currentLangage
+        let urlString = Constants.trendingURL + urlName
+        print(urlString)
+        let url = URL(string: urlString)
+        let request = URLRequest(url: url!)
+        webView.load(request)
+    }
+    
+    
     //MARK:NavigationView
     
     @IBOutlet weak var backButton: UIButton!
-    
+    @IBOutlet weak var navigationView: UIView!
     
     @IBAction func webViewGoback() {
        print("Go back")
@@ -24,6 +38,7 @@ class GithubViewController: UIViewController {
     
     @IBAction func changeLanguage() {
         print("Change Language")
+        
     }
     
     
@@ -49,10 +64,8 @@ class GithubViewController: UIViewController {
         super.viewDidLoad()
         //配置Webview
         webView.navigationDelegate = self;
-        let myURL = URL(string: "https://github.com/trending")
-        let myRequest = URLRequest(url: myURL!)
         webView.allowsBackForwardNavigationGestures = true
-        webView.load(myRequest)
+        updateModelToWeb()
     }
     
 }
