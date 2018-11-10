@@ -33,13 +33,27 @@ class GithubViewController: UIViewController {
     @IBAction func webViewGoback() {
        print("Go back")
         webView.goBack()
-//        checkIfNeedToShowBackButton()
     }
     
     @IBAction func changeLanguage() {
         print("Change Language")
         
+        if let view = changerView {
+            view.isHidden = view.isHidden ? false : true
+        }else{
+            //初始化changerView
+            let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY),
+                                               favoriteLanguage: [Constants.allLangages[45],"swift",Constants.allLangages[75]])
+            //设置delegate
+            newView.delegate = self
+            changerView = newView
+            view.addSubview(newView)
+        }
     }
+    
+    //MARK: ChoiceAntherLanguage
+    
+    var changerView:LangeuageChangerView?
     
     
     //MARK:WKWebView
@@ -69,7 +83,20 @@ class GithubViewController: UIViewController {
     }
     
 }
-
+//MARK:LanguageChangerDelegate
+extension GithubViewController:ChangeLangeuageButtonDelegate{
+    
+    func changeModel(language: String) {
+        model.ChangeLangeuageTo(language)
+        updateModelToWeb()
+    }
+    
+    func segueToFavoriteLanguageVC() {
+        print("Segue")
+    }
+    
+    
+}
 
 // MARK: WKNavigationDelegate
 extension GithubViewController: WKNavigationDelegate {
