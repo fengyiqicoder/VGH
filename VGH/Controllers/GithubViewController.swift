@@ -22,11 +22,14 @@ class GithubViewController: UIViewController {
         let url = URL(string: urlString)
         let request = URLRequest(url: url!)
         webView.load(request)
+        //更改顶部Button文字
+        languageButton.setTitle(model.currentLangage, for: .normal)
     }
     
     
     //MARK:NavigationView
     
+    @IBOutlet weak var languageButton:UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var navigationView: UIView!
     
@@ -42,8 +45,8 @@ class GithubViewController: UIViewController {
             view.isHidden = view.isHidden ? false : true
         }else{
             //初始化changerView
-            let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY),
-                                               favoriteLanguage: [Constants.allLangages[45],"swift",Constants.allLangages[75]])
+            let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY-4),
+                                               favoriteLanguage: [Constants.allLangages[45],"Swift",Constants.allLangages[75]])
             //设置delegate
             newView.delegate = self
             changerView = newView

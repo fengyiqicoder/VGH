@@ -23,6 +23,9 @@ class V2exViewController: UIViewController {
     @IBOutlet weak var nodeBar: NodesBarView!
     @IBOutlet weak var tableView: ToplicsTableView!
     
+    var isWaitingNetwork:Bool = false
+    
+    
     //MARK:下拉刷新
     let refreshControl = UIRefreshControl()
     var currentNodeName:String{
@@ -97,6 +100,8 @@ class V2exViewController: UIViewController {
     func segueToDetail(data:TopicsDetailData) {
         topicDetailDataForSegue = data
         DispatchQueue.main.async {
+            //更改状态
+            self.isWaitingNetwork = false
             self.performSegue(withIdentifier: "segueToTopicDetail", sender: nil)
         }
     }
@@ -156,6 +161,15 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //清除选择
+        tableView.deselectRow(at: indexPath, animated: true)
+        //判断是否在网络等待
+        print("isWaitingNetwork = ",isWaitingNetwork)
+        if isWaitingNetwork {
+            return
+        }else{
+            isWaitingNetwork = true
+        }
         //选择这个Row
         let cell = tableView.cellForRow(at: indexPath) as! TopicCell
         let topicId = cell.getIdOfThisTopic()
@@ -165,7 +179,7 @@ extension V2exViewController:UITableViewDelegate,UITableViewDataSource{
             //使用Segue链接读入下个界面
             segueToDetail(data: actualDetail)
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }

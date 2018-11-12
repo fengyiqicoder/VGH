@@ -350,6 +350,7 @@
                     <tabBarItem key="tabBarItem" title="Trending" id="b3N-m5-w4d"/>
                     <connections>
                         <outlet property="backButton" destination="dwB-dc-2Hj" id="k8o-Os-aLJ"/>
+                        <outlet property="languageButton" destination="PfH-Ub-Elf" id="sQi-Hb-5um"/>
                         <outlet property="navigationView" destination="Vhf-9S-fzc" id="sHn-4Y-juw"/>
                         <outlet property="webView" destination="Fsp-m4-M1v" id="zRt-l8-SKU"/>
                     </connections>

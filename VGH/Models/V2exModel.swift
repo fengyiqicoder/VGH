@@ -95,9 +95,7 @@ class V2exModel {//V2ex的模型
                             self.savedTopicsDetails[id] = newDetailData
                             //使用代理更新界面
                             self.updateViewProtocol.segueToTopicDetailInterfaceBaseOn(data: newDetailData)
-                            
                         }
-                        
                     }else{
                         print("类型不正确")
                         return
@@ -106,8 +104,9 @@ class V2exModel {//V2ex的模型
                     print("Error", parsingError)
                 }
             }else{
+                print("网络有问题")
                 print(error!)
-            }
+                }
             }.resume()
     }
     
