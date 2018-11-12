@@ -271,6 +271,21 @@
             </objects>
             <point key="canvasLocation" x="-1311" y="465"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="TPm-qi-hoB">
+            <objects>
+                <viewController id="U3h-RE-9YA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WHu-9O-vgD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IqR-vv-sTd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUG-By-ZH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231" y="465"/>
+        </scene>
         <!--Trending-->
         <scene sceneID="3dU-e3-rx2">
             <objects>
@@ -353,6 +368,7 @@
                         <outlet property="languageButton" destination="PfH-Ub-Elf" id="sQi-Hb-5um"/>
                         <outlet property="navigationView" destination="Vhf-9S-fzc" id="sHn-4Y-juw"/>
                         <outlet property="webView" destination="Fsp-m4-M1v" id="zRt-l8-SKU"/>
+                        <segue destination="U3h-RE-9YA" kind="show" id="iJ8-fL-pfD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OY-Nk-IPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

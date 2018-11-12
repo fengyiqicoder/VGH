@@ -15,6 +15,7 @@
 		1320981F21885092006DED90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1320981D21885092006DED90 /* LaunchScreen.storyboard */; };
 		1320982A21885092006DED90 /* VGHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320982921885092006DED90 /* VGHTests.swift */; };
 		13209835218859F4006DED90 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13209834218859F4006DED90 /* RootViewController.swift */; };
+		134057CC21998196007FFCCE /* ChooseFavoriteLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134057CB21998196007FFCCE /* ChooseFavoriteLanguageViewController.swift */; };
 		1344FFD72191328A00C99E0F /* TopicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */; };
 		1344FFD92191471800C99E0F /* RepliesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */; };
 		1344FFDB2191703300C99E0F /* StaticTopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1344FFDA2191703300C99E0F /* StaticTopicCell.swift */; };
@@ -54,6 +55,7 @@
 		1320982921885092006DED90 /* VGHTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGHTests.swift; sourceTree = "<group>"; };
 		1320982B21885092006DED90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13209834218859F4006DED90 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		134057CB21998196007FFCCE /* ChooseFavoriteLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFavoriteLanguageViewController.swift; sourceTree = "<group>"; };
 		1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDetailViewController.swift; sourceTree = "<group>"; };
 		1344FFD82191471800C99E0F /* RepliesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepliesTableViewCell.swift; sourceTree = "<group>"; };
 		1344FFDA2191703300C99E0F /* StaticTopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTopicCell.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				130FD429218A96C900A06CF0 /* NavigationViewController.swift */,
 				1344FFD62191328A00C99E0F /* TopicDetailViewController.swift */,
 				139F13772193FEFA001D37D8 /* GithubViewController.swift */,
+				134057CB21998196007FFCCE /* ChooseFavoriteLanguageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				135DF494218B413600018ECB /* DataStruture.swift in Sources */,
 				135DF499218BE44B00018ECB /* NodesBarView.swift in Sources */,
 				135DF48F218B407B00018ECB /* NetworkManager.swift in Sources */,
+				134057CC21998196007FFCCE /* ChooseFavoriteLanguageViewController.swift in Sources */,
 				135DF49B218D61C500018ECB /* ToplicsTableView.swift in Sources */,
 				1320981521885091006DED90 /* AppDelegate.swift in Sources */,
 				130FD42E218A97DF00A06CF0 /* V2exViewController.swift in Sources */,
