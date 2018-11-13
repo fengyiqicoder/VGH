@@ -18,19 +18,7 @@ class GithubModel {
         currentLangage = word
     }
     
-    var favoriteLanguage:[String] = [Constants.allLangages[0]]
-    
-    
-    var noFacoriteLanguage:[String] {
-        return Constants.allLangages.filter{(language)->Bool in
-            for flanguage in favoriteLanguage{
-                if flanguage == language{
-                    return false
-                }
-            }
-            return true
-        }
-    }
+    var favoriteLanguage:[String] = [Constants.allLangages[0],"Swift","Python"]
     
 }
 

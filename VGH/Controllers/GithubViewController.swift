@@ -41,24 +41,41 @@ class GithubViewController: UIViewController {
     
     @IBAction func changeLanguage() {
         print("Change Language")
-        
         if let view = changerView {
             view.isHidden = view.isHidden ? false : true
         }else{
-            //初始化changerView
-            let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY-4),
-                                               favoriteLanguage: [Constants.allLangages[0]])
-            //设置delegate
-            newView.delegate = self
-            changerView = newView
-            view.addSubview(newView)
+            gettingANewChangerView()
         }
+    }
+    //segue
+    @IBAction func goback(segue:UIStoryboardSegue){
+        if let chooseVC = segue.source as? ChooseFavoriteLanguageViewController , let newFavoriteLanguageArray = chooseVC.currentFavoriteLanguagesArray {
+            //更新changerView
+            print(newFavoriteLanguageArray)
+            model.favoriteLanguage = newFavoriteLanguageArray
+            gettingANewChangerView()
+            changerView?.isHidden = true
+        }
+        
     }
     
     //MARK: ChoiceAntherLanguage
     
     var changerView:LangeuageChangerView?
     
+    func gettingANewChangerView() {
+        changerView?.removeFromSuperview()
+        //初始化changerView
+        let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY-4),
+                                           favoriteLanguage: model.favoriteLanguage)
+        //设置delegate
+        newView.delegate = self
+        changerView = newView
+        view.addSubview(newView)
+        //更改currentLanguage为allLanguage
+        model.ChangeLangeuageTo(Constants.allLangages[0])
+        updateModelToWeb()
+    }
     
     //MARK:WKWebView
     
@@ -96,6 +113,7 @@ extension GithubViewController:ChangeLangeuageButtonDelegate{
     }
     
     func segueToFavoriteLanguageVC() {
+        
         performSegue(withIdentifier: "segueToChooseLanguage", sender: nil)
     }
     
@@ -112,13 +130,13 @@ extension GithubViewController:ChangeLangeuageButtonDelegate{
 extension GithubViewController: WKNavigationDelegate {
     //视图开始载入的时候显示左上交网络活动指示器
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        activityIndicator.startAnimating()
+//        activityIndicator.startAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     //载入结束后，关闭网络活动指示器
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        activityIndicator.stopAnimating()
+//        activityIndicator.stopAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
