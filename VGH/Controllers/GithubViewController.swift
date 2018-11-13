@@ -29,7 +29,7 @@ class GithubViewController: UIViewController {
     
     //MARK:NavigationView
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var languageButton:UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var navigationView: UIView!
@@ -100,6 +100,11 @@ class GithubViewController: UIViewController {
         //配置Webview
         webView.navigationDelegate = self;
         webView.allowsBackForwardNavigationGestures = true
+        //创建网页加载的偏好设置
+        let prefrences = WKPreferences()
+        prefrences.javaScriptEnabled = true
+        //配置网页视图
+        webView.configuration.preferences = prefrences
         updateModelToWeb()
     }
     

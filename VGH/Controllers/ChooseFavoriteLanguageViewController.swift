@@ -119,7 +119,7 @@ extension ChooseFavoriteLanguageViewController:UITableViewDelegate,UITableViewDa
         }else{
             currentFavoriteLanguagesArray.append(choosenLanguage)
         }
-//        print(currentFavoriteLanguagesArray)
+        print(currentFavoriteLanguagesArray)
         //更新tableView
         tableView.reloadSections(IndexSet(integer: 0), with: UITableView.RowAnimation.fade)
         //更改View
