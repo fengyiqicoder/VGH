@@ -29,6 +29,7 @@ class GithubViewController: UIViewController {
     
     //MARK:NavigationView
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var languageButton:UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var navigationView: UIView!
@@ -46,7 +47,7 @@ class GithubViewController: UIViewController {
         }else{
             //初始化changerView
             let newView = LangeuageChangerView(midPoint: CGPoint(x: navigationView.frame.midX, y: navigationView.frame.maxY-4),
-                                               favoriteLanguage: [Constants.allLangages[45],"Swift",Constants.allLangages[75]])
+                                               favoriteLanguage: [Constants.allLangages[0]])
             //设置delegate
             newView.delegate = self
             changerView = newView
@@ -103,13 +104,15 @@ extension GithubViewController:ChangeLangeuageButtonDelegate{
 
 // MARK: WKNavigationDelegate
 extension GithubViewController: WKNavigationDelegate {
-    //视图开始载入的时候显示网络活动指示器
+    //视图开始载入的时候显示左上交网络活动指示器
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        activityIndicator.startAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     //载入结束后，关闭网络活动指示器
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activityIndicator.stopAnimating()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     

@@ -14,36 +14,56 @@ class LangeuageChangerView: UIView {
     static let heightForACell:CGFloat =  30
     
     var delegate:ChangeLangeuageButtonDelegate!
+    var languageButtonArray:[UIButton] = []
+    var currentLanguageName:String = Constants.allLangages[0]
+    var favoriteLanguage:[String]!
+    
     
     convenience init(midPoint:CGPoint,favoriteLanguage:[String]){
         let x = midPoint.x - LangeuageChangerView.width/2
         let y = midPoint.y
-        let height = LangeuageChangerView.heightForACell*CGFloat(favoriteLanguage.count+1)
+        let height = LangeuageChangerView.heightForACell*CGFloat(favoriteLanguage.count)
         self.init(frame: CGRect(x: x, y: y, width: LangeuageChangerView.width, height: height))
-        //添加Buttons和配置Views的颜色
+        self.favoriteLanguage = favoriteLanguage
+        //和配置Views的颜色
         self.backgroundColor = #colorLiteral(red: 0.140522033, green: 0.160482645, blue: 0.1813155115, alpha: 1)
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
-        //新建button列表
-        var lastViewMaxY:CGFloat!
-        for (index,names) in favoriteLanguage.enumerated(){
+        updateButtonList(favoriteLanguage: favoriteLanguage)
+    }
+    
+    func updateButtonList(favoriteLanguage:[String]) {
+        //清空列表
+        for button in languageButtonArray {
+            button.removeFromSuperview()
+        }
+        languageButtonArray.removeAll()
+        //update frame
+//        let height = LangeuageChangerView.heightForACell*CGFloat(favoriteLanguage.count)
+//        self.frame = CGRect(x: frame.minX, y: frame.minY,
+//                            width: LangeuageChangerView.width, height: height)
+        //新建button列表 updateButtonList
+        for names in favoriteLanguage{
+            if names == currentLanguageName{ continue }
+            print(names)
             //创建新的button
-            let y = LangeuageChangerView.heightForACell*CGFloat(index)
-            let newButton = createAButton(frame: CGRect(x: 0, y: y, width: LangeuageChangerView.width, height: LangeuageChangerView.heightForACell)
-                                                    ,names: names)
-            
+            let y = LangeuageChangerView.heightForACell*CGFloat(languageButtonArray.count)
+            let newButton = createAButton(frame: CGRect(x: 0, y: y, width: LangeuageChangerView.width, height:          LangeuageChangerView.heightForACell)
+                ,names: names)
+            languageButtonArray.append(newButton)
             //创建分割线
             let newLine = UIView(frame: CGRect(x: 0, y: newButton.frame.maxY-1, width: newButton.frame.width, height: 1))
             newLine.backgroundColor = UIColor.white
             //添加到view
             self.addSubview(newButton)
             self.addSubview(newLine)
-            //储存LastView
-            lastViewMaxY = newLine.frame.maxY
         }
         //创建最后一个 “添加语言“按钮
+        let lastViewMaxY:CGFloat = languageButtonArray.last?.frame.maxY ?? 0
         let addLanguageButton = createAButton(frame: CGRect(x: 0, y: lastViewMaxY, width: LangeuageChangerView.width, height: LangeuageChangerView.heightForACell), names: Constants.addNewLanguageButtonTitle)
         self.addSubview(addLanguageButton)
+        languageButtonArray.append(addLanguageButton)
+        print(languageButtonArray)
     }
     
     func createAButton(frame:CGRect,names:String) -> UIButton {
@@ -63,6 +83,9 @@ class LangeuageChangerView: UIView {
         if buttonTitle == Constants.addNewLanguageButtonTitle {
             delegate.segueToFavoriteLanguageVC()
         }else{
+            //重写编写ButtonList
+            currentLanguageName = buttonTitle
+            updateButtonList(favoriteLanguage: self.favoriteLanguage)
             //使用delegate方法
             delegate.changeModel(language: sender.title(for: .normal)!)
         }
@@ -79,6 +102,7 @@ class LangeuageChangerView: UIView {
    
     override func draw(_ rect: CGRect) {
         // Drawing code
+        print("Drawing")
     }
 
 }
