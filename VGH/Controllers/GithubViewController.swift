@@ -96,9 +96,15 @@ extension GithubViewController:ChangeLangeuageButtonDelegate{
     }
     
     func segueToFavoriteLanguageVC() {
-        print("Segue")
+        performSegue(withIdentifier: "segueToChooseLanguage", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextVC = segue.destination as? ChooseFavoriteLanguageViewController{
+            //初始化下一个VC的值
+            nextVC.currentFavoriteLanguagesArray = model.favoriteLanguage
+        }
+    }
     
 }
 
