@@ -126,7 +126,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PaP-ui-pEt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="V2EX" id="3cm-BB-mdR"/>
+                    <tabBarItem key="tabBarItem" title="V2EX" image="V2EX" id="3cm-BB-mdR"/>
                     <connections>
                         <outlet property="mainView" destination="N4Z-bt-DaK" id="TdR-hx-9eh"/>
                         <outlet property="nodeBar" destination="psm-AI-LpQ" id="qDh-xF-SdJ"/>
@@ -464,7 +464,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dAM-qB-vGD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Trending" id="b3N-m5-w4d"/>
+                    <tabBarItem key="tabBarItem" title="Trending" image="Githubicon" id="b3N-m5-w4d"/>
                     <connections>
                         <outlet property="backButton" destination="dwB-dc-2Hj" id="k8o-Os-aLJ"/>
                         <outlet property="languageButton" destination="PfH-Ub-Elf" id="sQi-Hb-5um"/>
@@ -525,7 +525,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hhD-d3-fMo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="HackerNews" id="UP8-HM-apV"/>
+                    <tabBarItem key="tabBarItem" title="HackerNews" image="HN" id="UP8-HM-apV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-xS-U5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,7 +533,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Githubicon" width="52" height="52"/>
+        <image name="HN" width="53" height="29"/>
         <image name="Triangle-button" width="52" height="44"/>
+        <image name="V2EX" width="91" height="29"/>
         <image name="backButton" width="75" height="75"/>
     </resources>
 </document>

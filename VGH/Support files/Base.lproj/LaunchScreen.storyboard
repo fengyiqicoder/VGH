@@ -18,11 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNI-7R-iUo">
-                                <rect key="frame" x="44" y="123.5" width="133.5" height="29.5"/>
+                                <rect key="frame" x="28" y="117.5" width="149.5" height="33.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="V2ex ">
+                                    <fragment content="V2EX">
                                         <attributes>
-                                            <font key="NSFont" size="29" name="Copperplate-Bold"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="29" name="Cochin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -30,11 +31,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Op-uG-aNt">
-                                <rect key="frame" x="44" y="183" width="155.5" height="29.5"/>
+                                <rect key="frame" x="28" y="181" width="171.5" height="33.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Github">
                                         <attributes>
-                                            <font key="NSFont" size="29" name="Copperplate-Bold"/>
+                                            <font key="NSFont" size="29" name="Cochin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -42,11 +43,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-b1-Wj2">
-                                <rect key="frame" x="44" y="243" width="247" height="29.5"/>
+                                <rect key="frame" x="28" y="245" width="263" height="33.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="HacherNews">
                                         <attributes>
-                                            <font key="NSFont" size="29" name="Copperplate-Bold"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="29" name="Cochin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -54,11 +56,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMf-5V-fh1">
-                                <rect key="frame" x="177" y="605.5" width="172" height="21.5"/>
+                                <rect key="frame" x="177" y="603" width="191" height="24"/>
                                 <attributedString key="attributedText">
                                     <fragment content="third party app">
                                         <attributes>
-                                            <font key="NSFont" size="21" name="Copperplate-Bold"/>
+                                            <font key="NSFont" size="21" name="Cochin-Italic"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -71,13 +73,13 @@
                             <constraint firstItem="eNI-7R-iUo" firstAttribute="leading" secondItem="1Op-uG-aNt" secondAttribute="leading" id="EhU-g1-eMt"/>
                             <constraint firstItem="TMf-5V-fh1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="NAq-8H-sjZ"/>
                             <constraint firstItem="1Op-uG-aNt" firstAttribute="top" secondItem="eNI-7R-iUo" secondAttribute="bottom" constant="30" id="Sws-pe-323"/>
-                            <constraint firstItem="1Op-uG-aNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="X21-Y5-Qyj"/>
+                            <constraint firstItem="1Op-uG-aNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="X21-Y5-Qyj"/>
                             <constraint firstItem="eyD-b1-Wj2" firstAttribute="top" secondItem="1Op-uG-aNt" secondAttribute="bottom" constant="30.5" id="X96-vY-UeG"/>
                             <constraint firstItem="1Op-uG-aNt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-146" id="evx-pF-yRt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TMf-5V-fh1" secondAttribute="bottom" constant="40" id="fvD-MA-uRy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eNI-7R-iUo" secondAttribute="trailing" constant="197.5" id="gG2-il-alx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1Op-uG-aNt" secondAttribute="trailing" constant="175.5" id="lTg-V6-Ee5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMf-5V-fh1" secondAttribute="trailing" constant="26" id="lf9-6r-yoV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TMf-5V-fh1" secondAttribute="trailing" constant="7" id="lf9-6r-yoV"/>
                             <constraint firstItem="eyD-b1-Wj2" firstAttribute="leading" secondItem="1Op-uG-aNt" secondAttribute="leading" id="vX0-bG-mDC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="eyD-b1-Wj2" secondAttribute="trailing" constant="84" id="z8M-Kp-SRe"/>
                         </constraints>
