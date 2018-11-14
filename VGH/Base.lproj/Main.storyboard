@@ -518,18 +518,70 @@
         <!--HackerNews-->
         <scene sceneID="9xr-m5-2Ap">
             <objects>
-                <viewController id="jFj-9j-RIa" sceneMemberID="viewController">
+                <viewController id="jFj-9j-RIa" customClass="HackerNewsViewController" customModule="VGH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HLR-rU-PG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="di0-e4-cuL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HackerNews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E9-l3-RB3">
+                                        <rect key="frame" x="138" y="10" width="99" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpF-QG-Vgz">
+                                        <rect key="frame" x="8" y="2.5" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="RbI-Z4-zQt"/>
+                                            <constraint firstAttribute="width" secondItem="MpF-QG-Vgz" secondAttribute="height" multiplier="1:1" id="p4c-Ib-BLs"/>
+                                        </constraints>
+                                        <state key="normal" image="backButton"/>
+                                        <connections>
+                                            <action selector="goBack" destination="jFj-9j-RIa" eventType="touchUpInside" id="jg4-rI-csr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.39832174777984619" blue="0.005875537171959877" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3E9-l3-RB3" firstAttribute="centerX" secondItem="di0-e4-cuL" secondAttribute="centerX" id="Ann-nK-lJf"/>
+                                    <constraint firstAttribute="height" constant="40" id="B6V-xR-DDt"/>
+                                    <constraint firstItem="MpF-QG-Vgz" firstAttribute="centerY" secondItem="3E9-l3-RB3" secondAttribute="centerY" id="WKC-xu-rbJ"/>
+                                    <constraint firstItem="3E9-l3-RB3" firstAttribute="centerY" secondItem="di0-e4-cuL" secondAttribute="centerY" id="tAr-tN-fKq"/>
+                                    <constraint firstItem="MpF-QG-Vgz" firstAttribute="leading" secondItem="di0-e4-cuL" secondAttribute="leading" constant="8" id="xFW-0Z-bHs"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ux-nG-4UC">
+                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99821859599999996" green="0.39832174780000001" blue="0.0058755371720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Ux-nG-4UC" firstAttribute="leading" secondItem="hhD-d3-fMo" secondAttribute="leading" id="1MO-1q-7HS"/>
+                            <constraint firstItem="di0-e4-cuL" firstAttribute="leading" secondItem="hhD-d3-fMo" secondAttribute="leading" id="Stb-J5-9ZP"/>
+                            <constraint firstItem="hhD-d3-fMo" firstAttribute="trailing" secondItem="0Ux-nG-4UC" secondAttribute="trailing" id="VZQ-4B-Us4"/>
+                            <constraint firstItem="0Ux-nG-4UC" firstAttribute="top" secondItem="di0-e4-cuL" secondAttribute="bottom" id="ei2-LH-jrs"/>
+                            <constraint firstItem="hhD-d3-fMo" firstAttribute="bottom" secondItem="0Ux-nG-4UC" secondAttribute="bottom" id="oWb-8A-qU4"/>
+                            <constraint firstItem="di0-e4-cuL" firstAttribute="top" secondItem="hhD-d3-fMo" secondAttribute="top" id="oZA-tN-wlS"/>
+                            <constraint firstItem="hhD-d3-fMo" firstAttribute="trailing" secondItem="di0-e4-cuL" secondAttribute="trailing" id="tDk-0P-a3M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hhD-d3-fMo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="HackerNews" image="HN" id="UP8-HM-apV"/>
+                    <connections>
+                        <outlet property="webView" destination="0Ux-nG-4UC" id="Zko-8V-yUs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wa-xS-U5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-430"/>
+            <point key="canvasLocation" x="744.79999999999995" y="-430.43478260869568"/>
         </scene>
     </scenes>
     <resources>
