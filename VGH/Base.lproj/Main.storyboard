@@ -126,7 +126,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PaP-ui-pEt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="V2EX" image="V2EX" id="3cm-BB-mdR"/>
+                    <tabBarItem key="tabBarItem" title="V2EX" image="V2EXButton" id="3cm-BB-mdR"/>
                     <connections>
                         <outlet property="mainView" destination="N4Z-bt-DaK" id="TdR-hx-9eh"/>
                         <outlet property="nodeBar" destination="psm-AI-LpQ" id="qDh-xF-SdJ"/>
@@ -536,7 +536,7 @@
         <image name="Githubicon" width="52" height="52"/>
         <image name="HN" width="53" height="29"/>
         <image name="Triangle-button" width="52" height="44"/>
-        <image name="V2EX" width="91" height="29"/>
+        <image name="V2EXButton" width="91" height="29"/>
         <image name="backButton" width="75" height="75"/>
     </resources>
 </document>
