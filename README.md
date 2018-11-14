@@ -1,6 +1,8 @@
 # VGH
 V2ex + Github Trending + HackerNews 第三方客户端
-
+<br>
+<br>
+<img src = https://github.com/FinchFeng/VGH/blob/master/showPicture.png >
 ## 主要功能：
 
 1、学习ios网络编程（此应用纯原生Swift4写的）<br>
