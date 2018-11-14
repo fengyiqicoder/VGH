@@ -145,20 +145,4 @@ extension GithubViewController: WKNavigationDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    //阻止链接被点击
-//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-//        
-//        if navigationAction.navigationType == .linkActivated {
-////            decisionHandler(.cancel)
-////
-////            let alertController = UIAlertController(title: "Action not allowed", message: "Tapping on links is not allowed. Sorry!", preferredStyle: .alert)
-////            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-////            present(alertController, animated: true, completion: nil)
-////            return
-//            print("点击链接")
-//            backButton.isHidden = false
-//        }
-//
-//        decisionHandler(.allow)
-//    }
 }

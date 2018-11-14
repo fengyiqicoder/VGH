@@ -10,6 +10,8 @@ import Foundation
 
 class GithubModel {
     
+    var defaults = UserDefaults.standard
+    
     //Trend的model进行语言控制
     
     var currentLangage:String = Constants.allLangages[0]
@@ -18,7 +20,20 @@ class GithubModel {
         currentLangage = word
     }
     
-    var favoriteLanguage:[String] = [Constants.allLangages[0],"Swift","Python"]
+    var favoriteLanguage:[String] = [Constants.allLangages[0]] {
+        didSet{
+            //持久化数据
+            defaults.setValue(favoriteLanguage, forKey: "favoriteLanguage")
+            print("持久化数据")
+        }
+    }
+    
+    init() {
+        if let oldFavoriteLanguageValue = defaults.object(forKey: "favoriteLanguage") as? [String]{
+            favoriteLanguage = oldFavoriteLanguageValue
+            print("获取持久化数据")
+        }
+    }
     
 }
 
