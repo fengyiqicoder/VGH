@@ -13,19 +13,17 @@ class V2exModel {//V2ex的模型
     //被储存的主题
     var savedNodes:[String:NodesTopicsData] = [:]
     //储存的主题的回复
-    var savedTopicsDetails:[String:TopicsDetailData] = [:]
+//    var savedTopicsDetails:[String:TopicsDetailData] = [:]
     //UIProtocol
     var updateViewProtocol:ChangeNetworkUserInterfaceProtocol!
     
     //与Controller交互的方法
     
     func getDataFor(nodes:Bool,nodeName:String,update:Bool,id:String?) -> Any? {//返回Topic或者是Details
-        let dataDictionary:[String:Any] = nodes ? savedNodes : savedTopicsDetails //确认要的是哪个数据
-        let key = nodes ? nodeName : id!
-        if let actualData = dataDictionary[key] , update == false{
+        if let actualData = savedNodes[nodeName] , update == false , nodes == true{//只有nodes可以从缓存中读取
             return actualData
         }else{
-            //从网络获取
+            //从网络获取(topic一定从网络获取)
             getNetworkNodeData(forNode: nodes, nodeName: nodeName, id: id)
             return nil
         }
@@ -91,8 +89,6 @@ class V2exModel {//V2ex的模型
                                 //储存到topic下
                                 newDetailData.replys.append(reply)
                             }
-                            //储存到字典中
-                            self.savedTopicsDetails[id] = newDetailData
                             //使用代理更新界面
                             self.updateViewProtocol.segueToTopicDetailInterfaceBaseOn(data: newDetailData)
                         }
